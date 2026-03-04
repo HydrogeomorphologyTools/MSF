@@ -12,9 +12,9 @@ This software has been developed as part of the research activities within the p
 
 *   **Project Title**: MORPHEUS - GeoMORPHomEtry throUgh Scales for a resilient landscape
 *   **Protocol**: 2022JEFZRM
-*   **Financed by**: Next Generation EU (PNRR) and Ministero dell'Università e della Ricerca (MUR)
+*   **Financed by**: European Union - NextGenerationEU, Ministero dell'Università e della Ricerca (MUR), and Italia Domani (PNRR)
 
-We acknowledge the financial support provided by the Italian Ministry of University and Research and the European Union under the NextGenerationEU framework.
+We acknowledge the financial support provided by the Italian Ministry of University and Research and the European Union under the NextGenerationEU framework and the Italia Domani (Piano Nazionale di Ripresa e Resilienza) initiative.
 
 ---
 
