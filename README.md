@@ -32,26 +32,45 @@ The underlying algorithm is based on the Modified Single Flow model developed an
 
 ---
 
-## 🛠 Usage
+## 🛠 Usage & Detailed Guide
 
 ### Graphical User Interface (GUI)
-Simply run the standalone executable or:
+Simply run the standalone executable or run from source:
 ```bash
 python main.py
 ```
-The interface is organized into tabs:
-1.  **Inputs:** Define your Base DTM, Initiation Points, and Output naming.
-2.  **Processing:** Configure automated pit filling and flow direction calculation.
-3.  **MSF Model:** Set scientific parameters ($H/L$ threshold, diversion angles, etc.).
-4.  **Parallel:** Configure CPU workers for batch processing.
 
-### Command Line Interface (CLI)
-For automated tasks, use the CLI mode by passing arguments:
+#### 1. Inputs Tab
+*   **Base DTM**: The elevation model (GeoTIFF) used for all topographic calculations.
+*   **Initiation Points**: 
+    *   **Shapefile**: Points or Polygons. The software extracts pixel locations from these geometries.
+    *   **Raster**: Binary or weighted raster where cells > 0 are treated as sources.
+*   **Optional Overrides**: Toggle "Use External" to provide your own pre-filled DTMs or D8 Flow Directions. If toggled, the engine will skip its internal calculation steps for these files.
+*   **PQ_LIM Filename**: Custom name for the final hazardous zone output.
+
+#### 2. Processing Tab
+*   **Pit Filling**: Hydrologically corrects the DTM. Using **WhiteboxTools (Wang & Liu)** is highly recommended for accuracy.
+*   **Flow Direction**: Calculates the steepest path.
+
+#### 3. MSF Model Parameters
+*   **H/L Threshold**: Defines the runout stopping condition ($L$ is distance, $H$ is vertical drop). `0.19` is a common default for regional assessments.
+*   **Max Slope**: Threshold for flow initiation.
+*   **Direction Aware Uphill**: Adds physical consistency by preventing flow paths from reversing direction sharply.
+*   **Direct Distance H/L**: Toggle between Euclidean (straight line) vs. Along-Path distance for the $H/L$ calculation.
+
+#### 4. Resampling & Parallel
+*   **Resampling**: Convert high-res DTMs (e.g., 1m) to regional scales (e.g., 5m or 10m) to drastically reduce processing time.
+*   **Parallel Processing**: Assign multiple CPU cores. For regional maps with >1000 sources, using 8-16 workers provides significant speedups.
+
+---
+
+## 🚀 Command Line Interface (CLI)
+For automated tasks or server-side execution:
 ```bash
+# Run with a saved configuration
 MSF_Regional_Unified.exe --config my_settings.json
-```
-To dump a template configuration:
-```bash
+
+# Dump a template to edit
 MSF_Regional_Unified.exe --dump-config template.json
 ```
 
