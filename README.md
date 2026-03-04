@@ -1,4 +1,4 @@
-# MSF (Modified Single Flow) Debris Flow Hazard Assessment
+# MSF (Modified Single Flow) Debris Flow Hazard Assessment Tool
 
 ![MSF Logo](assets/image.jpg)
 
