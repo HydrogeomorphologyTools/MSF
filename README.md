@@ -99,8 +99,14 @@ pyinstaller --clean msf_standalone.spec
 
 ---
 
-## 📝 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## 📝 License & Disclaimer
+This project is licensed under the **GNU General Public License v2.0** - see the [LICENSE](LICENSE) file for details.
+
+### ⚠ IMPORTANT: AT YOUR OWN RISK
+*   **No Warranty**: This software is provided "as is" without warranty of any kind, either expressed or implied.
+*   **User Responsibility**: The entire risk as to the quality and performance of the program is with you. 
+*   **Liability**: In no event shall the authors or copyright holders be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the software or the use or other dealings in the software.
+*   **Scientific Results**: The developers assume no responsibility for the accuracy, reliability, or completeness of any results obtained through the use of this software. It is a research tool and should be used with professional judgment.
 
 ---
 
