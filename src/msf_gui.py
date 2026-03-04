@@ -207,7 +207,7 @@ class MSFWindow(QWidget):
     def _load_background(self):
         # Path logic for assets in development vs bundled mode
         base = getattr(sys, '_MEIPASS', os.path.dirname(os.path.dirname(__file__)))
-        path = os.path.join(base, "assets", "image.jpg")
+        path = os.path.join(base, "assets", "Gemini_df.png")
         if os.path.exists(path):
             try:
                 self._bg_pixmap = QPixmap(path)

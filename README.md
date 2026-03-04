@@ -1,8 +1,13 @@
 # MSF (Modified Single Flow) Debris Flow Hazard Assessment Tool
 
-![MSF Logo](assets/image.jpg)
+![MSF Header](assets/Gemini_df.png)
 
 **MSF (Modified Single Flow)** is a regional-scale GIS-based tool designed for the assessment of debris-flow runout zones and susceptibility. By leveraging Digital Elevation Models (DEMs) and initiation points, the software simulates the lateral spreading and deposition of mass movements with high computational efficiency.
+
+---
+
+## 🖥 Software Preview
+![MSF Interface](assets/screen.png)
 
 ---
 
