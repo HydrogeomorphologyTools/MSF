@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv
+env/
+venv/
+
+# Distribution / Build
+build/
+dist/
+*.spec
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+Desktop.ini
+
+# Data (Avoid uploading large rasters)
+*.tif
+*.shp
+*.dbf
+*.shx
+*.prj
+*.cpg
+*.qgz
+*.mxd
+outputs/
+temp/
