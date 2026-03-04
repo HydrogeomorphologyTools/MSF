@@ -7,11 +7,14 @@
 ---
 
 ## 🇪🇺 Funding & Acknowledgements
-This project has been developed under the framework of:
-*   **Next Generation EU** (PNRR)
-*   **Ministero dell'Università e della Ricerca (MUR)**
+This software has been developed as part of the research activities within the project:
+**PRIN 2022: PROGETTI DI RICERCA DI RILEVANTE INTERESSE NAZIONALE – Bando 2022**
 
-We acknowledge the financial support which made this regional-scale analysis tool possible.
+*   **Project Title**: MORPHEUS - GeoMORPHomEtry throUgh Scales for a resilient landscape
+*   **Protocol**: 2022JEFZRM
+*   **Financed by**: Next Generation EU (PNRR) and Ministero dell'Università e della Ricerca (MUR)
+
+We acknowledge the financial support provided by the Italian Ministry of University and Research and the European Union under the NextGenerationEU framework.
 
 ---
 
