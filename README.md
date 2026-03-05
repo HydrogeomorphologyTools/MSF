@@ -8,6 +8,7 @@
 
 ## 🖥 Software Preview
 ![MSF Interface](assets/screen.png)
+![PQ_LIM 3D View](assets/pqlim3d.png)
 
 ---
 
