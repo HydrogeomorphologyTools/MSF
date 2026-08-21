@@ -1,13 +1,13 @@
-# MSF (Modified Single Flow) Debris Flow Hazard Assessment Tool
+# DF-scan: Debris Flow Susceptibility Scan & Propagation Assessment Tool
 
-![MSF Header](assets/Gemini_df.png)
+![DF-scan Header](assets/Gemini_df.png)
 
-**MSF (Modified Single Flow)** is a regional-scale GIS-based tool designed for the assessment of debris-flow runout zones and susceptibility. By leveraging Digital Elevation Models (DEMs) and initiation points, the software simulates the lateral spreading and deposition of mass movements with high computational efficiency.
+**DF-scan** is a regional-scale GIS-based tool designed for the assessment of debris-flow runout zones and propagation susceptibility. By leveraging Digital Elevation Models (DEMs) and initiation points, the software simulates the lateral spreading and deposition of mass movements with high computational efficiency.
 
 ---
 
 ## 🖥 Software Preview
-![MSF Interface](assets/screen.png)
+![DF-scan Interface](assets/screen.png)
 ![PQ_LIM 3D View](assets/pqlim3d.png)
 
 ---
@@ -34,7 +34,7 @@ The underlying algorithm is based on the Modified Single Flow model developed an
 ## 🚀 Key Features
 *   **Regional Batch Processing:** Handle thousands of initiation points efficiently using multiprocessing.
 *   **Flexible Inputs:** Supports both Shapefiles (point/polygon) and Raster data for initiation zones.
-*   **Automated Pre-processing:** Integrated pit-filling and flow direction calculation via direct WhiteboxTools integration.
+*   **Automated Pre-processing:** Integrated pit-filling and flow direction calculation via custom implementations and fallback routines.
 *   **Resampling Engine:** Built-in DTM resampling with median/mean/bilinear aggregation methods.
 *   **Dual Interface:** Full Graphical User Interface (PyQt5) for interactive use and a Command Line Interface (CLI) for headless/automated workflows.
 *   **Standalone Executable:** Fully portable version available in Releases (no Python installation required).
@@ -55,13 +55,13 @@ python main.py
     *   **Shapefile**: Points or Polygons. The software extracts pixel locations from these geometries.
     *   **Raster**: Binary or weighted raster where cells > 0 are treated as sources.
 *   **Optional Overrides**: Toggle "Use External" to provide your own pre-filled DTMs or D8 Flow Directions. If toggled, the engine will skip its internal calculation steps for these files.
-*   **PQ_LIM Filename**: Custom name for the final hazardous zone output.
+*   **PQ_LIM Filename**: Custom name for the final propagation zone output.
 
 #### 2. Processing Tab
-*   **Pit Filling**: Hydrologically corrects the DTM. Using **WhiteboxTools (Wang & Liu)** is highly recommended for accuracy.
+*   **Pit Filling**: Hydrologically corrects the DTM.
 *   **Flow Direction**: Calculates the steepest path.
 
-#### 3. MSF Model Parameters
+#### 3. Simulation Parameters
 *   **H/L Threshold**: Defines the runout stopping condition ($L$ is distance, $H$ is vertical drop). `0.19` is a common default for regional assessments.
 *   **Max Slope**: Threshold for flow initiation.
 *   **Direction Aware Uphill**: Adds physical consistency by preventing flow paths from reversing direction sharply.
@@ -77,10 +77,7 @@ python main.py
 For automated tasks or server-side execution:
 ```bash
 # Run with a saved configuration
-MSF_Regional_Unified.exe --config my_settings.json
-
-# Dump a template to edit
-MSF_Regional_Unified.exe --dump-config template.json
+DF-scan.exe --config my_settings.json
 ```
 
 ---
@@ -91,16 +88,14 @@ If running from source, you need Python 3.10+ and the following libraries:
 *   `numpy`
 *   `geopandas`
 *   `PyQt5` (for GUI)
-*   `whitebox` (Python wrapper for pre-compiled binary)
 
 ---
 
 ## 📦 Compilation
 To build your own standalone executable:
-1.  Place the `whitebox_tools.exe` binary in the `WBT/` folder.
-2.  Run PyInstaller:
+1. Run PyInstaller:
 ```bash
-pyinstaller --clean msf_standalone.spec
+pyinstaller --clean DF-scan.spec
 ```
 
 ---
@@ -117,4 +112,4 @@ This project is licensed under the **GNU General Public License v2.0** - see the
 ---
 
 ## 📬 Contact & Support
-Developed for regional-scale hazard analysis. For bugs and feature requests, please open an Issue on this GitHub repository.
+Developed for regional-scale debris flow susceptibility and propagation analysis. For bugs and feature requests, please open an Issue on this GitHub repository.
