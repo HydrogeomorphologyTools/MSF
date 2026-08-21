@@ -52,6 +52,9 @@ try:
 except Exception:
     _HAS_SVG = False
 
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
 try:
     import dfscan_core as core
 except Exception as e:
